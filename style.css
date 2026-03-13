@@ -1,0 +1,72 @@
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(180deg, #f8b6c1, #f3a6b4);
+    color: #333;
+}
+
+.container {
+    padding: 30px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Заголовок */
+h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+/* Кнопки */
+button {
+    width: 100%;
+    padding: 18px;
+    margin: 12px 0;
+    font-size: 18px;
+    border-radius: 40px;
+    border: none;
+    background: #e91e63;
+    color: white;
+    cursor: pointer;
+}
+
+/* Блок с текстом факта */
+.fact-text {
+    display: none;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 15px;
+}
+
+/* Фото страница */
+.photo {
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+/* Музыка */
+audio {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Убираем лишнюю высоту */
+.page {
+    display: none;
+    padding-bottom: 30px;
+}
+
+.page.active {
+    display: block;
+}
+</style>
