@@ -29,8 +29,6 @@ color:#e91e63;
 margin-bottom:20px;
 }
 
-/* слайдер */
-
 .slider{
 display:flex;
 overflow-x:auto;
@@ -49,8 +47,6 @@ scroll-snap-align:center;
 width:100%;
 border-radius:15px;
 }
-
-/* скрыть полоску прокрутки */
 
 .slider::-webkit-scrollbar{
 display:none;
@@ -77,35 +73,52 @@ cursor:pointer;
 
 <h1>Наши моменты ❤️</h1>
 
-<div class="slider">
-
-<div class="slide">
-<img src="photo1.jpg">
-</div>
-
-<div class="slide">
-<img src="photo2.jpg">
-</div>
-
-<div class="slide">
-<img src="photo3.jpg">
-</div>
-
-<div class="slide">
-<video controls>
-<source src="video1.mp4" type="video/mp4">
-</video>
-</div>
-
-<div class="slide">
-<img src="photo4.jpg">
-</div>
-
-</div>
+<div class="slider" id="slider"></div>
 
 <button onclick="location.href='final.html'">Дальше →</button>
 
 </div>
+
+<script>
+
+const slider = document.getElementById("slider");
+
+/* 118 фото */
+
+for(let i=1;i<=118;i++){
+
+let slide=document.createElement("div");
+slide.className="slide";
+
+let img=document.createElement("img");
+img.src="photo"+i+".jpg";
+
+slide.appendChild(img);
+slider.appendChild(slide);
+
+}
+
+/* 29 видео */
+
+for(let i=1;i<=29;i++){
+
+let slide=document.createElement("div");
+slide.className="slide";
+
+let video=document.createElement("video");
+video.controls=true;
+
+let source=document.createElement("source");
+source.src="video"+i+".mp4";
+source.type="video/mp4";
+
+video.appendChild(source);
+slide.appendChild(video);
+slider.appendChild(slide);
+
+}
+
+</script>
 
 </body>
 </html>
