@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Фото 📸</title>
+<title>Наши моменты 📸</title>
 
 <style>
 
@@ -16,62 +16,56 @@ padding:20px;
 }
 
 .container{
-max-width:500px;
+max-width:600px;
 margin:auto;
 background:white;
-padding:25px;
+padding:20px;
 border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 h1{
 color:#e91e63;
+margin-bottom:20px;
 }
 
-img{
+/* слайдер */
+
+.slider{
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+gap:15px;
+padding-bottom:10px;
+}
+
+.slide{
+min-width:100%;
+scroll-snap-align:center;
+}
+
+.slide img,
+.slide video{
 width:100%;
 border-radius:15px;
-margin-top:15px;
 }
 
-a{
-display:block;
-margin-top:20px;
-font-size:18px;
-text-decoration:none;
-color:#e91e63;
+/* скрыть полоску прокрутки */
+
+.slider::-webkit-scrollbar{
+display:none;
 }
 
 button{
 width:100%;
-padding:18px;
-margin:10px 0;
-font-size:18px;
+margin-top:20px;
+padding:16px;
 border:none;
 border-radius:30px;
 background:#e91e63;
 color:white;
+font-size:17px;
 cursor:pointer;
-}
-/* сердечки */
-
-@keyframes heartFloat{
-0%{
-transform:translate(-50%,-50%) scale(1);
-opacity:1;
-}
-100%{
-transform:translate(-50%,-120px) scale(1.5);
-opacity:0;
-}
-}
-
-.next-btn{
-width:auto;
-padding:12px 22px;
-font-size:16px;
-border-radius:25px;
-margin-top:20px;
 }
 
 </style>
@@ -81,44 +75,37 @@ margin-top:20px;
 
 <div class="container">
 
-<h1>Смотрю на такую красотку и глаз не нарадуется😍😍😍</h1>
+<h1>Наши моменты ❤️</h1>
 
+<div class="slider">
+
+<div class="slide">
 <img src="photo1.jpg">
+</div>
+
+<div class="slide">
 <img src="photo2.jpg">
+</div>
+
+<div class="slide">
 <img src="photo3.jpg">
+</div>
+
+<div class="slide">
+<video controls>
+<source src="video1.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="slide">
 <img src="photo4.jpg">
-<img src="photo5.jpg">
-<img src="photo6.jpg">
-<img src="photo7.jpg">
-
-
-<button class="next-btn" onclick="location.href='surprise.html'">Финал😉❤️</button>
+</div>
 
 </div>
 
-<script>
+<button onclick="location.href='final.html'">Дальше →</button>
 
-document.addEventListener("click", function(e){
-
-let heart = document.createElement("div");
-heart.innerHTML = "❤️";
-
-heart.style.position = "fixed";
-heart.style.left = e.clientX + "px";
-heart.style.top = e.clientY + "px";
-heart.style.fontSize = "30px";
-heart.style.pointerEvents = "none";
-heart.style.animation = "heartFloat 1s ease-out forwards";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},1000);
-
-});
-
-</script>
+</div>
 
 </body>
 </html>
